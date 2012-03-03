@@ -27,7 +27,7 @@ Both functions first check for the existence of the `@2x` graphics and won't fal
 
 ## Install
 
-1.	Move the retina folder into your compass directory
+1.	Move the folder containing this README into your compass directory (rename it to `retina`)
 
 2.	Add the following to your `config.rb`
 
