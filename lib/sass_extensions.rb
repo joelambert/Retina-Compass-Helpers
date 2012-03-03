@@ -1,3 +1,14 @@
+###
+#
+# Retina helper mixins for Compass
+# http://www.joelambert.co.uk
+# 
+# Copyright 2012, Joe Lambert.
+# Free to use under the MIT license.
+# http://joelambert.mit-license.org/
+#
+###
+
 module Compass::SassExtensions::Functions::Files
   # Does the supplied image exists?
   def file_exists(image_file)
