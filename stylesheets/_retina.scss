@@ -13,10 +13,13 @@
 	// If we have a retina image then add styles for it too
 	@if file_exists(retina_filename($image))
 	{
-		@media only screen and (-webkit-min-device-pixel-ratio: 2)
+		@media only screen
 		{
-			@include background-size(50% auto);
-			background-image: image-url(retina_filename($image));
+			@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min--moz-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
+			{
+				@include background-size(50% auto);
+				background-image: image-url(retina_filename($image));
+			}
 		}
 	}
 }
@@ -27,10 +30,13 @@
 	// If we have a retina image then add styles for it too
 	@if file_exists(retina_filename($image))
 	{
-		@media only screen and (-webkit-min-device-pixel-ratio: 2)
+		@media only screen
 		{
-			@include background-size(50% auto);
-			background-image: inline-image(retina_filename($image));
+			@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min--moz-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
+			{
+				@include background-size(50% auto);
+				background-image: inline-image(retina_filename($image));
+			}
 		}
 	}
 }
