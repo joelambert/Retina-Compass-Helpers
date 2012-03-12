@@ -15,7 +15,7 @@
 	{
 		@media only screen and (-webkit-min-device-pixel-ratio: 2)
 		{
-			@include background-size(50% auto);
+			@include background-size(image-width($image) auto);
 			background-image: image-url(retina_filename($image));
 		}
 	}
@@ -29,7 +29,7 @@
 	{
 		@media only screen and (-webkit-min-device-pixel-ratio: 2)
 		{
-			@include background-size(50% auto);
+			@include background-size(image-width($image) auto);
 			background-image: inline-image(retina_filename($image));
 		}
 	}
