@@ -6,6 +6,8 @@
  * Free to use under the MIT license.
  * http://joelambert.mit-license.org/
  */
+ 
+@import "compass/css3/background-size";
 
 @mixin background-image-retina($image) {
 	background-image: image-url($image);
