@@ -9,29 +9,51 @@
  
 @import "compass/css3/background-size";
 
-@mixin background-image-retina($image) {
+@mixin background-image-retina($image, $relative-dimension: "width") {
 	background-image: image-url($image);
 	
 	// If we have a retina image then add styles for it too
 	@if file_exists(retina_filename($image))
 	{
-		@media only screen and (-webkit-min-device-pixel-ratio: 2)
+		@media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx) 
 		{
-			@include background-size(image-width($image) auto);
+			@if $relative-dimension == "height" {
+				@include background-size(auto image-height($image));
+			}
+			@else {
+				@include background-size(image-width($image) auto);
+			}
 			background-image: image-url(retina_filename($image));
 		}
 	}
 }
 
-@mixin inline-background-image-retina($image) {
+@mixin inline-background-image-retina($image, $relative-dimension: "width") {
 	background-image: inline-image($image);
 	
 	// If we have a retina image then add styles for it too
 	@if file_exists(retina_filename($image))
 	{
-		@media only screen and (-webkit-min-device-pixel-ratio: 2)
+		@media
+			only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi),
+			only screen and (                min-resolution: 2dppx)
 		{
-			@include background-size(image-width($image) auto);
+			@if $relative-dimension == "height" {
+				@include background-size(auto image-height($image));
+			}
+			@else {
+				@include background-size(image-width($image) auto);
+			}
 			background-image: inline-image(retina_filename($image));
 		}
 	}
